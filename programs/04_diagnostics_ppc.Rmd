@@ -1,0 +1,79 @@
+---
+title: "diagnostics_ppc"
+output:
+  html_document: default
+  pdf_document: default
+date: "2024-05-23"
+---
+
+Description: This script assesses model convergence by inspecting trace plots, R-hat values, and effective sample sizes. In addition, it performs a graphical posterior predictive check to assess model fit.
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, warning=FALSE, message=FALSE}
+library(brms)
+library(here)
+library(tidyverse)
+library(bayesplot)
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+mod_sp_dry <- readRDS(file = here("data", "output_data", "mod_sp_dry.RDS"))
+mod_sp_rainy <- readRDS(file = here("data", "output_data", "mod_sp_rainy.RDS"))
+all_mods <- append(mod_sp_dry, mod_sp_rainy)
+```
+
+## Trace plots
+
+```{r, warning=FALSE}
+
+trace_density <-  all_mods %>% 
+  map(~plot(.x, ann = TRUE))
+
+```
+
+## Rhats
+
+```{r, warning=FALSE, message=FALSE}
+
+rhat_ls <- all_mods %>% 
+  map(~brms::rhat(.x))
+
+rhat_df <- rhat_ls %>% 
+  bind_rows(.id = "id") %>% 
+  mutate_if(is.numeric, ~round(., digits = 3))
+
+(plot_rhats <- rhat_ls %>% 
+  map(~bayesplot::mcmc_rhat(.x)))
+```
+
+## Effective sample size
+
+```{r, warning=FALSE, message=FALSE}
+
+(ratios_ls <- all_mods %>% 
+  map(~neff_ratio(.x)) %>% 
+  map(~mcmc_neff(.x))
+)
+```
+
+
+## Posterior predictive check - dry season
+
+```{r, warning=FALSE, message=FALSE, out.width='50%', out.height='50%'}
+(ppc <- mod_sp_dry %>% 
+  map(~pp_check(.x))
+)
+```
+
+## Posterior predictive check - rainy season
+
+```{r, warning=FALSE, message=FALSE, out.width='50%', out.height='50%'}
+(ppc <- mod_sp_rainy %>% 
+  map(~pp_check(.x))
+)
+```
