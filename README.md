@@ -8,11 +8,14 @@ This study implements a BACI experimental sampling design to quantify the effect
 
 ## Data
 
-- processed_data/before_after_recs.RDS: data frame of species records.
-- processed_data/covariates.RDS: data frame of site covariates.
-- processed_data/dat_mods_dry:  data frame of species records in the dry season, annotated with covariates and summarized by site, time period, treatment, and patch.
-- processed_data/dat_mods_rainy:  data frame of species records in the rainy season annotated with covariates and summarized by site, time period, treatment, and patch.
-- processed_data/sum_ops.RDS: operational days of each camera-trap station.
+### Processed
+- before_after_recs.RDS: data frame of species records.
+- covariates.RDS: data frame of site covariates.
+- dat_mods_dry:  data frame of species records in the dry season, annotated with covariates and summarized by site, time period, treatment, and patch.
+- dat_mods_rainy:  data frame of species records in the rainy season annotated with covariates and summarized by site, time period, treatment, and patch.
+- sum_ops.RDS: operational days of each camera-trap station.
+
+### Output
 - output_data/mod_beta_mx.RDS: beta regression model fit to areal percent ground cover. 
 - output_data/mod_sp_dry.RDS: generalized linear mixed models for each animal species (dry season).
 - output_data/mod_sp_rainy.RDS: generalized linear mixed models for each animal species (rainy season).
