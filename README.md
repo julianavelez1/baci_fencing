@@ -16,9 +16,9 @@ This study implements a BACI experimental sampling design to quantify the effect
 - sum_ops.RDS: operational days of each camera-trap station.
 
 ### Output
-- output_data/mod_beta_mx.RDS: beta regression model fit to areal percent ground cover. 
-- output_data/mod_sp_dry.RDS: generalized linear mixed models for each animal species (dry season).
-- output_data/mod_sp_rainy.RDS: generalized linear mixed models for each animal species (rainy season).
+- mod_beta_mx.RDS: beta regression model fit to areal percent ground cover. 
+- mod_sp_dry.RDS: generalized linear mixed models for each animal species (dry season).
+- mod_sp_rainy.RDS: generalized linear mixed models for each animal species (rainy season).
 
 
 ## Programs
