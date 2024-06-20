@@ -1,1 +1,33 @@
-# baci_fencing
+## baci_fencing
+
+This repository contains data, code and results associated with:
+
+Vélez, J., McShea, W., Pukazhenthi, B., Rodríguez, J.D., Suárez, M.F., Torres, J.M., Barrera, C. and J. Fieberg. 2024. Cattle exclusion increases encounters of wild herbivores in Neotropical forests. Journal of Applied Ecology.
+
+This study implements a BACI experimental sampling design to quantify the effect of cattle exclusion on encounter probability of the native community of browsers and fruit consumers, and percent ground cover in multifunctional landscapes of the Colombian Orinoquía.
+
+## Data
+
+- processed_data/before_after_recs.RDS: data frame of species records.
+- processed_data/covariates.RDS: data frame of site covariates.
+- processed_data/dat_mods_dry:  data frame of species records in the dry season, annotated with covariates and summarized by site, time period, treatment, and patch.
+- processed_data/dat_mods_rainy:  data frame of species records in the rainy season annotated with covariates and summarized by site, time period, treatment, and patch.
+- processed_data/sum_ops.RDS: operational days of each camera-trap station.
+- output_data/mod_beta_mx.RDS: beta regression model fit to areal percent ground cover. 
+- output_data/mod_sp_dry.RDS: generalized linear mixed models for each animal species (dry season).
+- output_data/mod_sp_rainy.RDS: generalized linear mixed models for each animal species (rainy season).
+
+
+## Programs
+
+- 01a_glmm_animals.R: runs Bayesian generalized linear mixed models to estimate encounter probabilities of different animal species.
+- 02_baci_plots.R: plots posterior median Time x Treatment coefficients.
+- 03_baci_preds.R: plots posterior distributions of predicted mean encounter probability.
+- 04_diagnostics_ppc.Rmd: assesses model fit and convergence.
+
+## Figures
+
+- p_baci_animals.RDS: figure 2 in manuscript.
+- p_coeff_veg.RDS: figure 3 in manuscript.
+- p_beta_linpred_veg.RDS: figure 4 in manuscript.
+- p_linpreds_animals.rdata: figure 3 in supplementary information.
