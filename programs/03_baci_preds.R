@@ -93,6 +93,6 @@ linpreds_rainy <- ggplot(linpreds_mean %>%
 # Save plots ------------------------------------------------------------
 
 
-save(linpreds_dry, linpreds_rainy, file = here("figures", "p_linpreds_animals.rdata"))
+#save(linpreds_dry, linpreds_rainy, file = here("figures", "p_linpreds_animals.rdata"))
 
            

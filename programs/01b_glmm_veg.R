@@ -30,10 +30,9 @@ ci <- ci %>% ungroup() %>% dplyr::select(placename, ci, patch) %>%
 
 # Format covariates ---------------------------------------------------------------
 covariates <- covariates[order(covariates$placename),]
-covariates <- covariates %>% relocate(geometry, .after = placename)
 covariates <- replace(covariates, is.na(covariates), 0)
 
-covariates[,3:10] <- scale(covariates[,3:10], center = T, scale = T) # center and scale covariates
+covariates[,2:9] <- scale(covariates[,2:9], center = T, scale = T) # center and scale covariates
 
 filt_covs <- covariates %>% 
   left_join(ci, by = "placename") %>% 

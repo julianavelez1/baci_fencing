@@ -38,7 +38,7 @@ sp_order <- coef_bind %>% group_by(species) %>%
 
 mod_plot <- coef_bind %>% 
   mutate(species = factor(species, levels = sp_order)) %>%  # Factorize species names
-  ggplot(aes(x = species, y = baci, color = period, alpha = 0.8)) + 
+  ggplot(aes(x = species, y = baci, color = period)) + 
   stat_pointinterval(position = "dodge", 
                      point_interval = "median_qi", 
                      .width = c(0.5, 0.89), 
@@ -61,7 +61,7 @@ mod_plot <- coef_bind %>%
 
 # Save plot ---------------------------------------------------------------
 
-saveRDS(mod_plot, file = here("figures/p_baci_animals.RDS"))
+#saveRDS(mod_plot, file = here("figures/p_baci_animals.RDS"))
 
 
 
