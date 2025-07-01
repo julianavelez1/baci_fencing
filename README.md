@@ -2,7 +2,7 @@
 
 This repository contains data, code and results associated with:
 
-Vélez, J., McShea, W., Pukazhenthi, B., Rodríguez, J.D., Suárez, M.F., Torres, J.M., Barrera, C. and J. Fieberg. 2024. Cattle exclusion increases encounters of wild herbivores in Neotropical forests. Journal of Applied Ecology.
+Vélez, J., McShea, W., Pukazhenthi, B., Rodríguez, J.D., Suárez, M.F., Torres, J.M., Barrera, C. and J. Fieberg. 2024. Cattle exclusion increases encounters of wild herbivores in Neotropical forests. Journal of Applied Ecology, 61, 2444-2454. https://doi.org/10.1111/1365-2664.14751
 
 This study implements a BACI experimental sampling design to quantify the effect of cattle exclusion on encounter probability of the native community of browsers and fruit consumers, and percent ground cover in multifunctional landscapes of the Colombian Orinoquía.
 
